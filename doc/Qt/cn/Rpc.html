@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Qt XML RPC：Rpc（简体中文）</title>
+    <link href="../classic.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div align="center">
+      <h1>Qt XML RPC：Rpc（简体中文）</h1>
+    </div>
+    <hr size="2" width="100%">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr>
+          <td valign="top"><a href="../index.html">Qt XML RPC</a> </td>
+          <td valign="top"><a href="index.html">Qt XML RPC（简体中文）</a> </td>
+          <td valign="top"><br>
+          </td>
+          <td valign="top"><br>
+          </td>
+          <td valign="top"><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr size="2" width="100%">
+    <h2>目录</h2>
+    <ol>
+      <li><a href="#Introduction">功能简介</a></li>
+      <li><a href="#Declaration">类别宣告</a></li>
+      <ol>
+        <li><a href="#setParent">setParent</a></li>
+        <li><a href="#Start">Start</a></li>
+        <li><a href="#Stop">Stop</a></li>
+        <li><a href="#run">run</a></li>
+        <li><a href="#Working">Working</a></li>
+      </ol>
+      <li><a href="#Examples">使用说明</a></li>
+    </ol>
+    <hr size="2" width="100%">
+    <h2><a name="Introduction"></a>功能简介</h2>
+    Rpc类别的作用是将<a href="XmlRpcServer.html">XmlRpcServer</a>进行封装，成为一个独立可以执
+    行的远程过程调用伺服器。<br>
+    <br>
+    如果本机希望提供其他机器函式呼叫服务，您应该考虑使用这个类别来运行远程过程调用伺服器。<br>
+    <br>
+    类别被建构时，会同时建构两个<a href="Keywords.html#RPC">RPC</a>通道：<br>
+    <ol>
+      <li><a href="RpcMethodExists.html">RpcMethodExists</a></li>
+      <li><a href="RpcMethodHeartbeat.html">RpcMethodHeartbeat</a><br>
+      </li>
+    </ol>
+    如果您希望与这两个RPC通道连接功能，您需要使用<a href="#setParent">setParent</a>函式来设定。<br>
+    <br>
+    <hr size="2" width="100%">
+    <h2><a name="Declaration"></a>类别宣告</h2>
+    <br>
+    <table width="100%" border="0" cellpadding="2" cellspacing="2">
+      <tbody>
+        <tr>
+          <td valign="top">
+            <meta name="qrichtext" content="1">
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#808000;">class</span><span style=" color:#c0c0c0;"> </span><span style=" color:#c0c0c0;"></span><span style=" color:#800080;">Rpc</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">:</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">public</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">Thread</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000000;">{</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">public</span><span style=" color:#000000;">:</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><a href="XmlRpcServer.html"><span style=" color:#800080;">XmlRpcServer</span></a><span style=" color:#c0c0c0;"> </span><span style=" color:#800000;">RPC</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">explicit</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">Rpc</span><span style=" color:#c0c0c0;">         </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">             </span><span style=" color:#800080;">Rpc</span><span style=" color:#c0c0c0;">         </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">Rpc</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>rpc<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">~</span><span style=" font-style:italic; color:#000000;">Rpc</span><span style=" color:#c0c0c0;">         </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;">     </span><a href="#setParent"><span style=" color:#000000;">setParent</span></a><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">(</span><span style=" color:#800080;">QObject</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>parent<span style=" color:#000000;">,</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">char</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>method<span style=" color:#000000;">,</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">char</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>login<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;">     </span><a href="#Start"><span style=" color:#000000;">Start</span></a><span style=" color:#c0c0c0;">       </span><span style=" color:#000000;">(</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>port<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;">     </span><a href="#Stop"><span style=" color:#000000;">Stop</span></a><span style=" color:#c0c0c0;">        </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;">     </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">protected</span><span style=" color:#000000;">:</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><a href="RpcMethodExists.html"><span style=" color:#800080;">RpcMethodExists</span></a><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800000;">Exists</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><a href="RpcMethodHeartbeat.html"><span style=" color:#800080;">RpcMethodHeartbeat</span></a><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800000;">Heartbeat</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;"> </span><a href="#run"><span style=" font-style:italic; color:#000000;">run</span></a><span style=" color:#c0c0c0;">     </span><span style=" color:#000000;">(</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>Type<span style=" color:#000000;">,</span><span style=" color:#800080;">ThreadData</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>data<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;"> </span><a href="#Working"><span style=" font-style:italic; color:#000000;">Working</span></a><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#800080;">ThreadData</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>data<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">private</span><span style=" color:#000000;">:</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000000;">}</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <style type="text/css">
+p, li { white-space: pre-wrap; }
+</style></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <hr size="2" width="100%"> <a name="setParent"></a><span style="
+      color:#808000;">void</span><span style=" color:#c0c0c0;"> </span><span
+      style=" color:#000000;">setParent</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#800080;">QObject</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span
+      style=" color:#c0c0c0;"> </span>parent<span style="
+      color:#000000;">,</span><span style=" color:#808000;">const</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">char</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span
+      style=" color:#c0c0c0;"> </span>method<span style="
+      color:#000000;">,</span><span style=" color:#808000;">const</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">char</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span
+      style=" color:#c0c0c0;"> </span>login<span style="
+      color:#000000;">)</span><span style=" color:#000000;"></span><br>
+    <br>
+    设定Exists及Heartbeat两个<a href="Keywords.html#RPC">RPC</a>通道的上层QObject，
+    参数为parent，并且连接Qt信号与插槽到Exists上。<br>
+    <br>
+    method及login如果为NULL，则不会连接信号。<br>
+    <br>
+    插槽method将与showMaximized信号连接。<br>
+    <br>
+    插槽login将与Login(QString,QString)信号连接。<br>
+    <br>
+    这个函式基本上只能使用一次，不可重覆呼叫，否则会造成信号的多次连接。<br>
+    <br>
+    <hr size="2" width="100%"><a name="Start"></a><span style="
+      color:#808000;">bool</span><span style=" color:#c0c0c0;"> </span><span
+      style=" color:#000000;">Start</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#000000;">(</span><span style="
+      color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>port<span
+      style=" color:#000000;">)</span><span style=" color:#000000;"></span><br>
+    <br>
+    于本机的port端口启动远程过程调用伺服器，这会启动一个线绪来执行伺服器端口监听。<br>
+    <br>
+    <hr size="2" width="100%"><a name="Stop"></a><span style="
+      color:#808000;">bool</span><span style=" color:#c0c0c0;"> </span><span
+      style=" color:#000000;">Stop</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#000000;">(</span><span style="
+      color:#808000;">void</span><span style=" color:#000000;">)</span><span
+      style=" color:#000000;"></span><br>
+    <br>
+    终止远程过程调用伺服器线绪的执行。<br>
+    <br>
+    <hr size="2" width="100%"><a name="run"></a><span style="
+      color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span
+      style=" color:#808000;">void</span><span style=" color:#c0c0c0;">
+    </span><span style=" font-style:italic; color:#000000;">run</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>Type<span
+      style=" color:#000000;">,</span><span style=" color:#800080;">ThreadData</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span
+      style=" color:#c0c0c0;"> </span>data<span style=" color:#000000;">)</span><span
+      style=" color:#000000;"></span><br>
+    <br>
+    线绪分配函式，Type为10001时，会执行<a href="#Working">Working</a>函式。<br>
+    <br>
+    <hr size="2" width="100%"><a name="Working"></a><span style="
+      color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span
+      style=" color:#808000;">void</span><span style=" color:#c0c0c0;">
+    </span><span style=" font-style:italic; color:#000000;">Working</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#800080;">ThreadData</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span
+      style=" color:#c0c0c0;"> </span>data<span style=" color:#000000;">)</span><span
+      style=" color:#000000;"></span><br>
+    <br>
+    这个函式启动伺服器端口监听及分配已经连线的通讯。<br>
+    <br>
+    终止的条件有两个：<br>
+    <ol>
+      <li>使用Stop函式终止监听程序。</li>
+      <li>CIOS Thread的主动终止方式。</li>
+    </ol>
+    <br>
+    <hr size="2" width="100%">
+    <h2><a name="Examples"></a>使用说明</h2>
+    <br>
+    <h3>启动</h3>
+    <br>
+    <span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">if</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">!</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#800000;">RPC</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">.</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">Start</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">port</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">return</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">false</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span>
+    <br>
+    <br>
+    <h3>停止</h3>
+    <br>
+    <span style=" color:#c0c0c0;"> </span><span style=" color:#800000;">RPC</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">.</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">Stop</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span>
+    <br>
+    <br>
+    <h3>连接信号</h3>
+    <br>
+    <span style=" color:#c0c0c0;"> </span><span style=" color:#800000;">plan</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">-&gt;</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#800000;">RPC</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">.</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">setParent</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">this</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">SLOT</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#c0c0c0;"> </span>Maximized<span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">SLOT</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#c0c0c0;"> </span>Login<span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#800080;">QString</span><span style="
+      color:#000000;">,</span><span style=" color:#800080;">QString</span><span
+      style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span
+      style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span
+      style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span
+      style=" color:#000000;">;</span>
+    <br>
+    <br>
+    <hr size="2" width="100%">
+    <div align="center"><font color="#cc6600"><b><i>Neutrino International Inc. 2001~2015</i></b></font></div>
+  </body>
+</html>

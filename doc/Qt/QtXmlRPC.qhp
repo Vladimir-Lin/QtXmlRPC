@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+    <namespace>com.neutrino.qtxmlrpc</namespace>
+    <virtualFolder>QtXmlRPC</virtualFolder>
+    <customFilter name="CIOS XML RPC 1.6.0">
+        <filterAttribute>Qt XML RPC</filterAttribute>
+        <filterAttribute>1.6.0</filterAttribute>
+    </customFilter>
+    <filterSection>
+        <filterAttribute>Qt XML RPC</filterAttribute>
+        <filterAttribute>1.6.0</filterAttribute>
+        <toc>
+            <section title="CIOS XML RPC Manual" ref="index.html">
+                <section title="English" ref="en/index.html"/>
+                <section title="正體中文" ref="tw/index.html"/>
+                <section title="简体中文" ref="cn/index.html"/>
+            </section>
+        </toc>
+        <keywords>
+            <keyword name="XML RPC" id="CIOS::XmlRpc" ref="index.html"/>
+            <keyword name="XML RPC（正體中文）" id="CIOS::XmlRpc::TW" ref="tw/index.html"/>
+            <keyword name="XML RPC架構（正體中文）" id="CIOS::XmlRpc::Architecture::TW" ref="tw/Architecture.html"/>
+            <keyword name="XML（正體中文）" id="CIOS::XML::TW" ref="tw/Keywords.html#XML"/>
+            <keyword name="RPC（正體中文）" id="CIOS::RPC::TW" ref="tw/Keywords.html#RPC"/>
+            <keyword name="XmlRpcErrorHandler（正體中文）" id="CIOS::XmlRpcErrorHandler::TW" ref="tw/XmlRpcErrorHandler.html"/>
+            <keyword name="getErrorHandler（正體中文）" id="CIOS::XmlRpcErrorHandler::getErrorHandler::TW" ref="tw/XmlRpcErrorHandler.html#getErrorHandler"/>
+            <keyword name="setErrorHandler（正體中文）" id="CIOS::XmlRpcErrorHandler::setErrorHandler::TW" ref="tw/XmlRpcErrorHandler.html#setErrorHandler"/>
+            <keyword name="XmlRpcLogHandler（正體中文）" id="CIOS::XmlRpcLogHandler::TW" ref="tw/XmlRpcLogHandler.html"/>
+            <keyword name="XmlRpcSource（正體中文）" id="CIOS::XmlRpcSource::TW" ref="tw/XmlRpcSource.html"/>
+            <keyword name="XmlRpcUtil（正體中文）" id="CIOS::XmlRpcUtil::TW" ref="tw/XmlRpcUtil.html"/>
+            <keyword name="parseTag（正體中文）" id="CIOS::XmlRpcUtil::parseTag::TW" ref="tw/XmlRpcUtil.html#parseTag"/>
+            <keyword name="findTag（正體中文）" id="CIOS::XmlRpcUtil::findTag::TW" ref="tw/XmlRpcUtil.html#findTag"/>
+            <keyword name="getNextTag（正體中文）" id="CIOS::XmlRpcUtil::getNextTag::TW" ref="tw/XmlRpcUtil.html#getNextTag"/>
+            <keyword name="nextTagIs（正體中文）" id="CIOS::XmlRpcUtil::nextTagIs::TW" ref="tw/XmlRpcUtil.html#nextTagIs"/>
+            <keyword name="xmlEncode（正體中文）" id="CIOS::XmlRpcUtil::xmlEncode::TW" ref="tw/XmlRpcUtil.html#xmlEncode"/>
+            <keyword name="xmlDecode（正體中文）" id="CIOS::XmlRpcUtil::xmlDecode::TW" ref="tw/XmlRpcUtil.html#xmlDecode"/>
+            <keyword name="log（正體中文）" id="CIOS::XmlRpcUtil::log::TW" ref="tw/XmlRpcUtil.html#log"/>
+            <keyword name="error（正體中文）" id="CIOS::XmlRpcUtil::error::TW" ref="tw/XmlRpcUtil.html#error"/>
+            <keyword name="XmlRpcValue（正體中文）" id="CIOS::XmlRpcValue::TW" ref="tw/XmlRpcValue.html"/>
+            <keyword name="XmlRpcDispatch（正體中文）" id="CIOS::XmlRpcDispatch::TW" ref="tw/XmlRpcDispatch.html"/>
+            <keyword name="XmlRpcClient（正體中文）" id="CIOS::XmlRpcClient::TW" ref="tw/XmlRpcClient.html"/>
+            <keyword name="XmlRpcServerMethod（正體中文）" id="CIOS::XmlRpcServerMethod::TW" ref="tw/XmlRpcServerMethod.html"/>
+            <keyword name="XmlRpcServerConnection（正體中文）" id="CIOS::XmlRpcServerConnection::TW" ref="tw/XmlRpcServerConnection.html"/>
+            <keyword name="XmlRpcServer（正體中文）" id="CIOS::XmlRpcServer::TW" ref="tw/XmlRpcServer.html"/>
+            <keyword name="RpcVirtualMethod（正體中文）" id="CIOS::RpcVirtualMethod::TW" ref="tw/RpcVirtualMethod.html"/>
+            <keyword name="RpcMethodExists（正體中文）" id="CIOS::RpcMethodExists::TW" ref="tw/RpcMethodExists.html"/>
+            <keyword name="RpcMethodHeartbeat（正體中文）" id="CIOS::RpcMethodHeartbeat::TW" ref="tw/RpcMethodHeartbeat.html"/>
+            <keyword name="Rpc（正體中文）" id="CIOS::Rpc::TW" ref="tw/Rpc.html"/>
+            <keyword name="setParent（正體中文）" id="CIOS::Rpc::setParent::TW" ref="tw/Rpc.html#setParent"/>
+            <keyword name="Start（正體中文）" id="CIOS::Rpc::Start::TW" ref="tw/Rpc.html#Start"/>
+            <keyword name="Stop（正體中文）" id="CIOS::Rpc::Stop::TW" ref="tw/Rpc.html#Stop"/>
+            <keyword name="run（正體中文）" id="CIOS::Rpc::run::TW" ref="tw/Rpc.html#run"/>
+            <keyword name="Working（正體中文）" id="CIOS::Rpc::Working::TW" ref="tw/Rpc.html#Working"/>
+            <keyword name="RpcCommands（正體中文）" id="CIOS::RpcCommands::TW" ref="tw/RpcCommands.html"/>
+        </keywords>
+        <files>
+            <file>*.css</file>
+            <file>*.html</file>
+            <file>images/*</file>
+            <file>tw/*</file>
+            <file>en/*</file>
+            <file>cn/*</file>
+        </files>
+    </filterSection>
+</QtHelpProject>

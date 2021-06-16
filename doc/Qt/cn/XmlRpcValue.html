@@ -1,0 +1,895 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Qt XML RPC：XmlRpcValue（简体中文）</title>
+    <link href="../classic.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div align="center">
+      <h1>Qt XML RPC：XmlRpcValue（简体中文）</h1>
+    </div>
+    <hr size="2" width="100%">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr>
+          <td valign="top"><a href="../index.html">Qt XML RPC</a> </td>
+          <td valign="top"><a href="index.html">Qt XML RPC（简体中文）</a> </td>
+          <td valign="top"><br>
+          </td>
+          <td valign="top"><br>
+          </td>
+          <td valign="top"><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr size="2" width="100%"> <br>
+    <br>
+    <br>
+    <br>
+    类别宣告<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%">
+    <h2>类别宣告</h2>
+    <br>
+    <br>
+    <br>
+    <br>
+    <table width="100%" border="0" cellpadding="2" cellspacing="2">
+      <tbody>
+        <tr>
+          <td valign="top">
+            <meta name="qrichtext" content="1">
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#808000;">class</span><span style=" color:#c0c0c0;"> </span><span style=" color:#c0c0c0;"></span><span style=" color:#800080;">XmlRpcValue</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000000;">{</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">public</span><span style=" color:#000000;">:</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">enum</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">Type</span><span style=" color:#c0c0c0;">             </span><span style=" color:#000000;">{</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">TypeInvalid</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000080;">0</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">,</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">TypeBoolean</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000080;">1</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">,</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">TypeInt</span><span style=" color:#c0c0c0;">      </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000080;">2</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">,</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">TypeDouble</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000080;">3</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">,</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">TypeString</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000080;">4</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">,</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">TypeDateTime</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000080;">5</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">,</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">TypeBase64</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000080;">6</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">,</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">TypeArray</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000080;">7</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">,</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">TypeStruct</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000080;">8</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">,</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">TypeTuid</span><span style=" color:#c0c0c0;">     </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000080;">9</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">,</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">TypeUuid</span><span style=" color:#c0c0c0;">     </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000080;">10</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">,</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">TypeEnd</span><span style=" color:#c0c0c0;">      </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000080;">11</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">}</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">typedef</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QByteArray</span><span style=" color:#c0c0c0;">                    </span><span style=" color:#800080;">BinaryData</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">typedef</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QList</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&lt;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;">         </span><span style=" color:#000000;">&gt;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">ValueArray</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">typedef</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QMap</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">&lt;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#000000;">,</span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&gt;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">ValueStruct</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">protected</span><span style=" color:#000000;">:</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#800080;">Type</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800000;">_type</span><span style=" color:#c0c0c0;">               </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">union</span><span style=" color:#c0c0c0;">                    </span><span style=" color:#000000;">{</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;">          </span><span style=" color:#800000;">asBool</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;">           </span><span style=" color:#800000;">asInt</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">qint64</span><span style=" color:#c0c0c0;">        </span><span style=" color:#800000;">asTuid</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">quint64</span><span style=" color:#c0c0c0;">       </span><span style=" color:#800000;">asUuid</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#808000;">double</span><span style=" color:#c0c0c0;">        </span><span style=" color:#800000;">asDouble</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">QDateTime</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800000;">asTime</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;">     </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800000;">asString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">BinaryData</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800000;">asBinary</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">ValueArray</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800000;">asArray</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#800080;">ValueStruct</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800000;">asStruct</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">}</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800000;">_value</span><span style=" color:#c0c0c0;">                 </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">public</span><span style=" color:#000000;">:</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">explicit</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;">                                  </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">explicit</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;">                </span>value<span style=" color:#c0c0c0;">             </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">explicit</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;">                 </span>value<span style=" color:#c0c0c0;">             </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">explicit</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#800080;">qint64</span><span style=" color:#c0c0c0;">              </span>value<span style=" color:#c0c0c0;">             </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">explicit</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#800080;">quint64</span><span style=" color:#c0c0c0;">             </span>value<span style=" color:#c0c0c0;">             </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">explicit</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">double</span><span style=" color:#c0c0c0;">              </span>value<span style=" color:#c0c0c0;">             </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">explicit</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#800080;">QDateTime</span><span style=" color:#c0c0c0;">           </span>dateTime<span style=" color:#c0c0c0;">          </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">explicit</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;">     </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>value<span style=" color:#c0c0c0;">             </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">explicit</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">char</span><span style=" color:#c0c0c0;">        </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>value<span style=" color:#c0c0c0;">             </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">explicit</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;">              </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>value<span style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;">   </span>nBytes<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">explicit</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;">     </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>xml<span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>offset<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">             </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>rhs<span style=" color:#c0c0c0;">               </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">~</span><span style=" font-style:italic; color:#000000;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;">                                  </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;">  </span><span style=" font-style:italic; color:#000000;">clear</span><span style=" color:#c0c0c0;">      </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">operator</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>rhs<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">operator</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;">        </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>rhs<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">operator</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;">         </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>rhs<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">operator</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">qint64</span><span style=" color:#c0c0c0;">      </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>rhs<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">operator</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">quint64</span><span style=" color:#c0c0c0;">     </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>rhs<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">operator</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">double</span><span style=" color:#c0c0c0;">      </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>rhs<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">operator</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">char</span><span style=" color:#c0c0c0;">        </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>rhs<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">operator</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;">     </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>rhs<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">operator</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QDateTime</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>rhs<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">operator</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">==</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>other<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">operator</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">!=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>other<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">Type</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">getType</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">operator</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;">        </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">{</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">assertTypeOrInvalid</span><span style=" color:#000000;">(</span><span style=" color:#800080;">TypeBoolean</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">return</span><span style=" color:#c0c0c0;">  </span><span style=" color:#800000;">_value</span><span style=" color:#000000;">.</span><span style=" color:#800000;">asBool</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">}</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">operator</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;">         </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">{</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">assertTypeOrInvalid</span><span style=" color:#000000;">(</span><span style=" color:#800080;">TypeInt</span><span style=" color:#c0c0c0;">     </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">return</span><span style=" color:#c0c0c0;">  </span><span style=" color:#800000;">_value</span><span style=" color:#000000;">.</span><span style=" color:#800000;">asInt</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">}</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">operator</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">qint64</span><span style=" color:#c0c0c0;">      </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">{</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">assertTypeOrInvalid</span><span style=" color:#000000;">(</span><span style=" color:#800080;">TypeTuid</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">return</span><span style=" color:#c0c0c0;">  </span><span style=" color:#800000;">_value</span><span style=" color:#000000;">.</span><span style=" color:#800000;">asTuid</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">}</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">operator</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">quint64</span><span style=" color:#c0c0c0;">     </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">{</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">assertTypeOrInvalid</span><span style=" color:#000000;">(</span><span style=" color:#800080;">TypeUuid</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">return</span><span style=" color:#c0c0c0;">  </span><span style=" color:#800000;">_value</span><span style=" color:#000000;">.</span><span style=" color:#800000;">asUuid</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">}</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">operator</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">double</span><span style=" color:#c0c0c0;">      </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">{</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">assertTypeOrInvalid</span><span style=" color:#000000;">(</span><span style=" color:#800080;">TypeDouble</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">return</span><span style=" color:#c0c0c0;">  </span><span style=" color:#800000;">_value</span><span style=" color:#000000;">.</span><span style=" color:#800000;">asDouble</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">}</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">operator</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;">     </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">{</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">assertTypeOrInvalid</span><span style=" color:#000000;">(</span><span style=" color:#800080;">TypeString</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">return</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#800000;">_value</span><span style=" color:#000000;">.</span><span style=" color:#800000;">asString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">}</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">operator</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">BinaryData</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">{</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">assertTypeOrInvalid</span><span style=" color:#000000;">(</span><span style=" color:#800080;">TypeBase64</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">return</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#800000;">_value</span><span style=" color:#000000;">.</span><span style=" color:#800000;">asBinary</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">}</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">operator</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QDateTime</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">{</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">assertTypeOrInvalid</span><span style=" color:#000000;">(</span><span style=" color:#800080;">TypeDateTime</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">return</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#800000;">_value</span><span style=" color:#000000;">.</span><span style=" color:#800000;">asTime</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">}</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">operator</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">[]</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>i<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">          </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">operator</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">[]</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>i<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">operator</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">[]</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>k<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#800080;">XmlRpcValue</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">operator</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">[]</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">char</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>k<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;">           </span><span style=" color:#000000;">valid</span><span style=" color:#c0c0c0;">     </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;">            </span><span style=" color:#000000;">size</span><span style=" color:#c0c0c0;">      </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;">           </span><span style=" color:#000000;">setSize</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">(</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>size<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;">           </span><span style=" color:#000000;">hasMember</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>name<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;">           </span><span style=" color:#000000;">fromXml</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>valueXml<span style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>offset<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;">        </span><span style=" color:#000000;">toXml</span><span style=" color:#c0c0c0;">     </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#800080;">std</span><span style=" color:#000000;">::</span><span style=" color:#800080;">ostream</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">write</span><span style=" color:#c0c0c0;">     </span><span style=" color:#000000;">(</span><span style=" color:#800080;">std</span><span style=" color:#000000;">::</span><span style=" color:#800080;">ostream</span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>os<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">static</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">getDoubleFormat</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">static</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;">            </span><span style=" color:#000000;">setDoubleFormat</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">char</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>f<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">protected</span><span style=" color:#000000;">:</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">invalidate</span><span style=" color:#c0c0c0;">          </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">assertTypeOrInvalid</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#800080;">Type</span><span style=" color:#c0c0c0;"> </span>t<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">assertArray</span><span style=" color:#c0c0c0;">         </span><span style=" color:#000000;">(</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>size<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">assertStruct</span><span style=" color:#c0c0c0;">        </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">boolFromXml</span><span style=" color:#c0c0c0;">         </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>valueXml<span style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>offset<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">intFromXml</span><span style=" color:#c0c0c0;">          </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>valueXml<span style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>offset<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">tuidFromXml</span><span style=" color:#c0c0c0;">         </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>valueXml<span style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>offset<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">uuidFromXml</span><span style=" color:#c0c0c0;">         </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>valueXml<span style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>offset<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">doubleFromXml</span><span style=" color:#c0c0c0;">       </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>valueXml<span style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>offset<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">stringFromXml</span><span style=" color:#c0c0c0;">       </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>valueXml<span style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>offset<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">timeFromXml</span><span style=" color:#c0c0c0;">         </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>valueXml<span style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>offset<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">binaryFromXml</span><span style=" color:#c0c0c0;">       </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>valueXml<span style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>offset<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">arrayFromXml</span><span style=" color:#c0c0c0;">        </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>valueXml<span style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>offset<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">structFromXml</span><span style=" color:#c0c0c0;">       </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>valueXml<span style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>offset<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">boolToXml</span><span style=" color:#c0c0c0;">           </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">intToXml</span><span style=" color:#c0c0c0;">            </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">tuidToXml</span><span style=" color:#c0c0c0;">           </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">uuidToXml</span><span style=" color:#c0c0c0;">           </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">doubleToXml</span><span style=" color:#c0c0c0;">         </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">stringToXml</span><span style=" color:#c0c0c0;">         </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">timeToXml</span><span style=" color:#c0c0c0;">           </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">binaryToXml</span><span style=" color:#c0c0c0;">         </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">arrayToXml</span><span style=" color:#c0c0c0;">          </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">structToXml</span><span style=" color:#c0c0c0;">         </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">static</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800000;">_doubleFormat</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">private</span><span style=" color:#000000;">:</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000000;">}</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <style type="text/css">
+p, li { white-space: pre-wrap; }
+</style></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <br>
+    <meta name="qrichtext" content="1">
+    <p style="-qt-paragraph-type:empty; margin-top:0px;
+      margin-bottom:0px; margin-left:0px; margin-right:0px;
+      -qt-block-indent:0; text-indent:0px;"><br>
+    </p>
+    <br>
+    <table width="100%" border="0" cellpadding="2" cellspacing="2">
+      <tbody>
+        <tr>
+          <td valign="top"><span style=" color:#c0c0c0;"></span><span
+              style=" color:#800080;">std</span><span style="
+              color:#000000;">::</span><span style=" color:#800080;">ostream</span><span
+              style=" color:#c0c0c0;"> </span><span style="
+              color:#000000;">&amp;</span><span style=" color:#c0c0c0;">
+            </span><span style=" color:#000000;">operator</span><span
+              style=" color:#c0c0c0;"> </span><span style="
+              color:#000000;">&lt;&lt;</span><span style="
+              color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+              style=" color:#800080;">std</span><span style="
+              color:#000000;">::</span><span style=" color:#800080;">ostream</span><span
+              style=" color:#c0c0c0;"> </span><span style="
+              color:#000000;">&amp;</span><span style=" color:#c0c0c0;">
+            </span>os<span style=" color:#c0c0c0;"> </span><span
+              style=" color:#000000;">,</span><span style="
+              color:#800080;">N</span><span style=" color:#000000;">::</span><span
+              style=" color:#800080;">XmlRpcValue</span><span style="
+              color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+              style=" color:#c0c0c0;"> </span>v<span style="
+              color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span
+              style=" color:#000000;">;</span> </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <span style=" color:#808000;">virtual</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#808000;">void</span><span
+      style=" color:#c0c0c0;"> </span><span style=" font-style:italic;
+      color:#000000;">clear</span><span style=" color:#c0c0c0;"> </span><span
+      style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span
+      style=" color:#000000;">)</span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <span style=" color:#808000;">const</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#800080;">Type</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">getType</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <span style=" color:#808000;">bool</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">valid</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <span style=" color:#808000;">int</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">size</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span
+      style=" color:#c0c0c0;"></span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <br>
+    <span style=" color:#808000;">void</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">setSize</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>size<span
+      style=" color:#000000;">)</span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <span style=" color:#808000;">bool</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">hasMember</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span>name<span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <span style=" color:#808000;">bool</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">fromXml</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span>valueXml<span style="
+      color:#000000;">,</span><span style=" color:#808000;">int</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span
+      style=" color:#c0c0c0;"> </span>offset<span style="
+      color:#000000;">)</span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">toXml</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <span style=" color:#800080;">std</span><span style="
+      color:#000000;">::</span><span style=" color:#800080;">ostream</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">write</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#800080;">std</span><span style=" color:#000000;">::</span><span
+      style=" color:#800080;">ostream</span><span style="
+      color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>os<span
+      style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span
+      style=" color:#808000;">const</span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <span style=" color:#808000;">static</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">getDoubleFormat</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"></span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <span style=" color:#808000;">static</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#808000;">void</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">setDoubleFormat</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#808000;">char</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span
+      style=" color:#c0c0c0;"> </span>f<span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"></span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <span style=" color:#808000;">void</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">invalidate</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"></span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <span style=" color:#808000;">void</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">assertTypeOrInvalid</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#800080;">Type</span><span style=" color:#c0c0c0;">
+    </span>t<span style=" color:#000000;">)</span><span style="
+      color:#c0c0c0;"></span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <br>
+    <span style=" color:#808000;">void</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">assertArray</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>size<span
+      style=" color:#000000;">)</span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <span style=" color:#808000;">void</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">assertStruct</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"></span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <span style=" color:#808000;">bool</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">boolFromXml</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span>valueXml<span style="
+      color:#000000;">,</span><span style=" color:#808000;">int</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span
+      style=" color:#c0c0c0;"> </span>offset<span style="
+      color:#000000;">)</span><span style=" color:#c0c0c0;"></span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <span style=" color:#808000;">bool</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">intFromXml</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span>valueXml<span style="
+      color:#000000;">,</span><span style=" color:#808000;">int</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span
+      style=" color:#c0c0c0;"> </span>offset<span style="
+      color:#000000;">)</span><span style=" color:#c0c0c0;"></span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <br>
+    <span style=" color:#808000;">bool</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">tuidFromXml</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span>valueXml<span style="
+      color:#000000;">,</span><span style=" color:#808000;">int</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span
+      style=" color:#c0c0c0;"> </span>offset<span style="
+      color:#000000;">)</span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <span style=" color:#808000;">bool</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">uuidFromXml</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span>valueXml<span style="
+      color:#000000;">,</span><span style=" color:#808000;">int</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span
+      style=" color:#c0c0c0;"> </span>offset<span style="
+      color:#000000;">)</span><span style=" color:#c0c0c0;"></span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <span style=" color:#808000;">bool</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">doubleFromXml</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span>valueXml<span style="
+      color:#000000;">,</span><span style=" color:#808000;">int</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span
+      style=" color:#c0c0c0;"> </span>offset<span style="
+      color:#000000;">)</span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <span style=" color:#808000;">bool</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">stringFromXml</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span>valueXml<span style="
+      color:#000000;">,</span><span style=" color:#808000;">int</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span
+      style=" color:#c0c0c0;"> </span>offset<span style="
+      color:#000000;">)</span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <br>
+    <span style=" color:#808000;">bool</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">timeFromXml</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span>valueXml<span style="
+      color:#000000;">,</span><span style=" color:#808000;">int</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span
+      style=" color:#c0c0c0;"> </span>offset<span style="
+      color:#000000;">)</span><span style=" color:#c0c0c0;"></span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <span style=" color:#808000;">bool</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">binaryFromXml</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span>valueXml<span style="
+      color:#000000;">,</span><span style=" color:#808000;">int</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span
+      style=" color:#c0c0c0;"> </span>offset<span style="
+      color:#000000;">)</span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <span style=" color:#808000;">bool</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">arrayFromXml</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span>valueXml<span style="
+      color:#000000;">,</span><span style=" color:#808000;">int</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span
+      style=" color:#c0c0c0;"> </span>offset<span style="
+      color:#000000;">)</span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <span style=" color:#808000;">bool</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">structFromXml</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span>valueXml<span style="
+      color:#000000;">,</span><span style=" color:#808000;">int</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span
+      style=" color:#c0c0c0;"> </span>offset<span style="
+      color:#000000;">)</span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <br>
+    <span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">boolToXml</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span
+      style=" color:#c0c0c0;"></span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">intToXml</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <br>
+    <span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">tuidToXml</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">uuidToXml</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span
+      style=" color:#c0c0c0;"></span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <br>
+    <span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">doubleToXml</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">stringToXml</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">timeToXml</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">binaryToXml</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">arrayToXml</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span
+      style=" color:#c0c0c0;"></span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">structToXml</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%"><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr size="2" width="100%">
+    <div align="center"><font color="#cc6600"><b><i>Neutrino
+            International Inc. 2001~2015</i></b></font><br>
+    </div>
+    <br>
+  </body>
+</html>

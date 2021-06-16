@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Qt XML RPC：XmlRpcErrorHandler（正體中文）</title>
+    <link href="../classic.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div align="center">
+      <h1>Qt XML RPC：XmlRpcErrorHandler（正體中文）</h1>
+    </div>
+    <hr size="2" width="100%">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr>
+          <td valign="top"><a href="../index.html">Qt XML RPC</a></td>
+          <td valign="top"><a href="./index.html">Qt XML RPC（正體中文）</a></td>
+          <td valign="top"></td>
+          <td valign="top"></td>
+          <td valign="top"></td>
+        </tr>
+      </tbody>
+    </table><br>
+    <hr size="2" width="100%">
+    <h2>目錄</h2>
+    <ol>
+      <li><a href="#Introduction">功能簡介</a></li>
+      <li><a href="#Declaration">類別宣告</a></li>
+      <li><a href="#Default">內定的錯誤訊息處理</a></li>
+      <li><a href="#Examples">使用範例</a></li>
+    </ol>
+    <hr size="2" width="100%">
+    <h2><a name="Introduction"></a>功能簡介</h2>
+    <br>
+    <br>XmlRpcErrorHandler是個錯誤訊息輸出的處理類別。<br>
+    <br>如果您需要設定自已所使用的錯誤訊息輸出，您需要繼承這個類別，並且實作「error」訊息處理函數。<br>
+    <br>一般而言，這個類別都是QtXmlRPC當中的內部類別在使用。<br>
+    <br>
+    <hr size="2" width="100%">
+    <h2><a name="Declaration"></a>類別宣告</h2>
+    <br>
+    <table width="100%" border="0" cellpadding="2" cellspacing="2">
+      <tbody>
+        <tr>
+          <td valign="top">
+            <meta name="qrichtext" content="1">
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#808000;">class</span><span style=" color:#c0c0c0;"> </span><span style=" color:#c0c0c0;"></span><span style=" color:#800080;">XmlRpcErrorHandler</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000000;">{</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">public</span><span style=" color:#000000;">:</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">explicit</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">XmlRpcErrorHandler</span><span style=" color:#c0c0c0;">                  </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">~</span><span style=" font-style:italic; color:#000000;">XmlRpcErrorHandler</span><span style=" color:#c0c0c0;">                  </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">static</span><span style=" color:#c0c0c0;">  </span><span style=" color:#800080;">XmlRpcErrorHandler</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;"><a name="getErrorHandler"></a>getErrorHandler</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">void</span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">static</span><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;">                 <a name="setErrorHandler"></a></span><span style=" color:#000000;">setErrorHandler</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#800080;">XmlRpcErrorHandler</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>eh<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">virtual</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;">                 </span><span style=" font-style:italic; color:#000000;">error</span><span style=" color:#c0c0c0;">           </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">char</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>msg<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000080;">0</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">protected</span><span style=" color:#000000;">:</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">static</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">XmlRpcErrorHandler</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800000;">errorHandler</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">private</span><span style=" color:#000000;">:</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000000;">}</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <style type="text/css">
+p, li { white-space: pre-wrap; }
+</style></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    其中，errorHandler不可為NULL，否則會發生錯誤。<br>
+    <br>
+    <hr size="2" width="100%">
+    <h2><a name="Default"></a>內定的錯誤訊息處理</h2>
+    <br>
+    <table width="100%" border="0" cellpadding="2" cellspacing="2">
+      <tbody>
+        <tr>
+          <td valign="top">
+            <meta name="qrichtext" content="1">
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#808000;">static class</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">DefaultErrorHandler</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">:</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">public</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">N</span><span style=" color:#000000;">::</span><span style=" color:#800080;">XmlRpcErrorHandler</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000000;">{</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">public</span><span style=" color:#000000;">:</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">error</span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">char</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">msg</span><span style=" color:#000000;">)</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">{</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#000080;">#ifdef</span><span style=" color:#c0c0c0;"> </span>XMLRPC_DEBUG</pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span>N<span style=" color:#000000;">::</span>printf<span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#c0c0c0;"> </span>QString<span style=" color:#000000;">::</span>fromUtf8<span style=" color:#000000;">(</span>msg<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">true</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">true</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">      </span><span style=" color:#000080;">#endif</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">}</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000000;">}</span><span style=" color:#c0c0c0;"> </span>defaultErrorHandler<span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <style type="text/css">
+p, li { white-space: pre-wrap; }
+</style></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    如果您要繼承這個類別來實作錯誤訊息轉向，此處即為範例。<br>
+    <br>
+    內定的版本，僅在除錯狀態下才會輸出訊息，正常狀態下，完全不處理訊息。<br>
+    <br>
+    <hr size="2" width="100%">
+    <h2><a name="Examples"></a>使用範例</h2>
+    <br>
+    <h3> 輸出錯誤訊息</h3>
+    <table width="100%" border="0" cellpadding="2" cellspacing="2">
+      <tbody>
+        <tr>
+          <td valign="top">
+            <meta name="qrichtext" content="1">
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">N</span><span style=" color:#000000;">::</span><span style=" color:#800080;">XmlRpcUtil</span><span style=" color:#000000;">::</span><span style=" color:#000000;">error</span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">char</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">fmt</span><span style=" color:#000000;">,...)</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000000;">{</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#800080;">va_list</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">va</span><span style=" color:#c0c0c0;">                                                  </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">char</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">buf</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">new</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">char</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">[</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000080;">LBUFSIZE</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">]</span><span style=" color:#c0c0c0;">                         </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">::</span><span style=" color:#000000;">memset</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">(</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">buf</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000080;">0</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">,</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000080;">LBUFSIZE</span><span style=" color:#c0c0c0;">     </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;">                     </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#000080;">va_start</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">(</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">va</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">,</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">fmt</span><span style=" color:#c0c0c0;">                 </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;">                     </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">vsnprintf</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">buf</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000080;">SBUFSIZE</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">fmt</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">,</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">va</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;">                     </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#000080;">va_end</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">(</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">va</span><span style=" color:#c0c0c0;">                        </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;">                     </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#800080;">N</span><span style=" color:#000000;">::</span><span style=" color:#800080;">XmlRpcErrorHandler</span><span style=" color:#000000;">::</span><span style=" color:#000000;">getErrorHandler</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">-&gt;</span><span style=" color:#c0c0c0;"> </span><span style=" font-style:italic; color:#000000;">error</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">buf</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">delete</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">[</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">]</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">buf</span><span style=" color:#c0c0c0;">                                              </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000000;">}</span></pre>
+            <style type="text/css">
+p, li { white-space: pre-wrap; }
+</style></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <h3>指定錯誤訊息處理類別</h3>
+    <br>
+    <table width="100%" border="0" cellpadding="2" cellspacing="2">
+      <tbody>
+        <tr>
+          <td valign="top"><span style=" color:#c0c0c0;"> </span><span
+              style=" color:#800080;">N</span><span style="
+              color:#000000;">::</span><span style=" color:#800080;">XmlRpcErrorHandler</span><span
+              style=" color:#000000;">::</span><span style="
+              color:#000000;">setErrorHandler</span><span style="
+              color:#000000;">(</span><span style=" color:#c0c0c0;"> </span><span
+              style=" color:#808000;">new</span><span style="
+              color:#c0c0c0;"> </span><span style=" color:#800080;">YourOwnErrorHandler</span><span
+              style=" color:#c0c0c0;"> </span><span style="
+              color:#000000;">(</span><span style=" color:#c0c0c0;"> </span><span
+              style=" color:#000000;">)</span><span style="
+              color:#c0c0c0;"> </span><span style=" color:#000000;">)</span><span
+              style=" color:#c0c0c0;"> </span><span style="
+              color:#000000;">;</span> </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <hr size="2" width="100%">
+    <div align="center"><font color="#cc6600"><b><i>Neutrino International Inc. 2001~2016</i></b></font></div>
+  </body>
+</html>

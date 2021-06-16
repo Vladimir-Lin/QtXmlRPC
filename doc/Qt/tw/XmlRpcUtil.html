@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Qt XML RPC：XmlRpcUtil（正體中文）</title>
+    <link href="../classic.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div align="center">
+      <h1>Qt XML RPC：XmlRpcUtil（正體中文）</h1>
+    </div>
+    <hr size="2" width="100%">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr>
+          <td valign="top"><a href="../index.html">Qt XML RPC</a> </td>
+          <td valign="top"><a href="index.html">Qt XML RPC（正體中文）</a> </td>
+          <td valign="top"><br>
+          </td>
+          <td valign="top"><br>
+          </td>
+          <td valign="top"><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr size="2" width="100%"> XmlRpcUtil一般是<a href="Keywords.html#XML">XML</a>
+    <a href="Keywords.html#RPC">RPC</a>類別在內部處理時使用，使用者一般不應該直接使用XmlRpcUtil
+    內的功能。<br>
+    <br>
+    <hr size="2" width="100%">
+    <h2>類別宣告</h2>
+    <br>
+    <table width="100%" border="0" cellpadding="2" cellspacing="2">
+      <tbody>
+        <tr>
+          <td valign="top">
+            <meta name="qrichtext" content="1">
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#808000;">class</span><span style=" color:#c0c0c0;"> </span><span style=" color:#c0c0c0;"></span><span style=" color:#800080;">XmlRpcUtil</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000000;">{</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">  </span><span style=" color:#808000;">public</span><span style=" color:#000000;">:</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">static</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">parseTag</span><span style=" color:#c0c0c0;">   </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">char</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>tag<span style=" color:#000000;">,</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>xml<span style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>offset<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">static</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">findTag</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">char</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>tag<span style=" color:#000000;">,</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>xml<span style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>offset<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">static</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">getNextTag</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>xml<span style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>offset<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">static</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">bool</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">nextTagIs</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">char</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>tag<span style=" color:#000000;">,</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>xml<span style=" color:#000000;">,</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>offset<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">static</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">xmlEncode</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>raw<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">static</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">xmlDecode</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#800080;">QString</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span style=" color:#c0c0c0;"> </span>encoded<span style=" color:#000000;">)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">static</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">log</span><span style=" color:#c0c0c0;">        </span><span style=" color:#000000;">(</span><span style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>level<span style=" color:#000000;">,</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">char</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>fmt<span style=" color:#000000;">,...)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#c0c0c0;">    </span><span style=" color:#808000;">static</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">void</span><span style=" color:#c0c0c0;">    </span><span style=" color:#000000;">error</span><span style=" color:#c0c0c0;">      </span><span style=" color:#000000;">(</span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">char</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>fmt<span style=" color:#000000;">,</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">...)</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <pre style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000000;">}</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <style type="text/css">p, li { white-space: pre-wrap; }
+</style> </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <hr size="2" width="100%"><a name="parseTag"></a><span style="
+      color:#808000;">static</span><span style=" color:#c0c0c0;"> </span><span
+      style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">parseTag</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#808000;">char</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span
+      style=" color:#c0c0c0;"> </span>tag<span style=" color:#000000;">,</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span>xml<span style=" color:#000000;">,</span><span
+      style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span
+      style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>offset<span
+      style=" color:#000000;">)</span><span style=" color:#c0c0c0;"></span><span
+      style=" color:#000000;"></span><br>
+    <br>
+    解析<a href="Keywords.html#XML">XML</a>標籤當中的內容。<br>
+    <br>
+    其中，tag必須為如下的標籤對：<br>
+    <br>
+    <table width="100%" border="0" cellpadding="2" cellspacing="2">
+      <tbody>
+        <tr>
+          <td valign="top">
+            <meta name="qrichtext" content="1">
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#808000;">static</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">char</span><span style=" color:#c0c0c0;"> </span>VALUE_TAG<span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">[]</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#008000;">"&lt;value&gt;"</span><span style=" color:#c0c0c0;">  </span><span style=" color:#000000;">;</span></pre>
+            <pre style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#808000;">static</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">const</span><span style=" color:#c0c0c0;"> </span><span style=" color:#808000;">char</span><span style=" color:#c0c0c0;"> </span>VALUE_ETAG<span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">[]</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">=</span><span style=" color:#c0c0c0;"> </span><span style=" color:#008000;">"&lt;/value&gt;"</span><span style=" color:#c0c0c0;"> </span><span style=" color:#000000;">;</span></pre>
+            <style type="text/css">
+p, li { white-space: pre-wrap; }
+</style></td>
+        </tr>
+      </tbody>
+    </table>
+    兩個標籤必須連接在一起。<br>
+    <br>
+    xml為整個<a href="Keywords.html#XML">XML</a>文件內容。<br>
+    <br>
+    offset為目前解析的開始位置。<br>
+    <br>
+    返回的內容為標籤對當中的內容，offset為整個標籤結束的下一個開始位置。<br>
+    <br>
+    <hr size="2" width="100%"><a name="findTag"></a><span style="
+      color:#808000;">static</span><span style=" color:#c0c0c0;"> </span><span
+      style=" color:#808000;">bool</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#000000;">findTag</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#808000;">char</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span
+      style=" color:#c0c0c0;"> </span>tag<span style=" color:#000000;">,</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span>xml<span style=" color:#000000;">,</span><span
+      style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span
+      style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>offset<span
+      style=" color:#000000;">)</span><span style=" color:#c0c0c0;"></span><span
+      style=" color:#000000;"></span><br>
+    <br>
+    尋找<a href="Keywords.html#XML">XML</a>標籤內容的起始位置。<br>
+    <br>
+    tag的標籤對需要如同<a href="#parseTag">parseTag</a>一樣。<br>
+    <br>
+    xml為整個<a href="Keywords.html#XML">XML</a>文件內容。<br>
+    <br>
+    offset為目前解析的開始位置。<br>
+    <br>
+    返回的值為是否尋找到標籤對，offset為整個標籤內容的開始位置。<br>
+    <br>
+    <hr size="2" width="100%"><a name="getNextTag"></a><span style="
+      color:#808000;">static</span><span style=" color:#c0c0c0;"> </span><span
+      style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">getNextTag</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span>xml<span style=" color:#000000;">,</span><span
+      style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span
+      style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>offset<span
+      style=" color:#000000;">)</span><span style=" color:#c0c0c0;"></span><span
+      style=" color:#000000;"></span><br>
+    <br>
+    找到下個<a href="Keywords.html#XML">XML</a>標籤的位置與標籤名稱。<br>
+    <br>
+    xml為整個<a href="Keywords.html#XML">XML</a>文件內容。<br>
+    <br>
+    offset為目前解析的開始位置。<br>
+    <br>
+    返回的文字字串為標籤名稱，offset為整個標籤記號的開始位置。<br>
+    <br>
+    標籤名稱如果長度為0，代表尋找失敗，不存在下一個XML標籤。<br>
+    <br>
+    <hr size="2" width="100%"><a name="nextTagIs"></a><span style="
+      color:#808000;">static</span><span style=" color:#c0c0c0;"> </span><span
+      style=" color:#808000;">bool</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#000000;">nextTagIs</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#808000;">char</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span
+      style=" color:#c0c0c0;"> </span>tag<span style=" color:#000000;">,</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span>xml<span style=" color:#000000;">,</span><span
+      style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span><span
+      style=" color:#000000;">*</span><span style=" color:#c0c0c0;"> </span>offset<span
+      style=" color:#000000;">)</span><span style=" color:#c0c0c0;"></span><span
+      style=" color:#000000;"></span><br>
+    <br>
+    找到下個指定的<a href="Keywords.html#XML">XML</a>標籤位置與標籤名稱。<br>
+    <br>
+    tag的標籤對需要如同parseTag一樣。<br>
+    <br>
+    xml為整個<a href="Keywords.html#XML">XML</a>文件內容。<br>
+    <br>
+    offset為目前解析的開始位置。<br>
+    <br>
+    返回的值為是否尋找到標籤對，offset為整個標籤內容的開始位置。<br>
+    <br>
+    <hr size="2" width="100%"><a name="xmlEncode"></a><span style="
+      color:#808000;">static</span><span style=" color:#c0c0c0;"> </span><span
+      style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">xmlEncode</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span>raw<span style=" color:#000000;">)</span><span
+      style=" color:#c0c0c0;"></span><span style=" color:#000000;"></span><br>
+    <br>
+    將一般文字編碼成<a href="Keywords.html#XML">XML</a>格式。<br>
+    <br>
+    <hr size="2" width="100%"><a name="xmlDecode"></a><span style="
+      color:#808000;">static</span><span style=" color:#c0c0c0;"> </span><span
+      style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">xmlDecode</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#800080;">QString</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">&amp;</span><span
+      style=" color:#c0c0c0;"> </span>encoded<span style="
+      color:#000000;">)</span><span style=" color:#c0c0c0;"></span><span
+      style=" color:#000000;"></span><br>
+    <br>
+    將<a href="Keywords.html#XML">XML</a>格式解碼為一般文字格式。<br>
+    <br>
+    <hr size="2" width="100%"><a name="log"></a><span style="
+      color:#808000;">static</span><span style=" color:#c0c0c0;"> </span><span
+      style=" color:#808000;">void</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#000000;">log</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">int</span><span style=" color:#c0c0c0;"> </span>level<span
+      style=" color:#000000;">,</span><span style=" color:#808000;">const</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#808000;">char</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span
+      style=" color:#c0c0c0;"> </span>fmt<span style=" color:#000000;">,...)</span><span
+      style=" color:#c0c0c0;"></span><span style=" color:#000000;"></span><br>
+    <br>
+    這個函式將訊息包裝成文字，並且透過<a href="XmlRpcLogHandler.html">XmlRpcLogHandler</a>輸
+    出。<br>
+    <br>
+    訊息長度的上限是16383。<br>
+    <br>
+    <hr size="2" width="100%"><a name="error"></a><span style="
+      color:#808000;">static</span><span style=" color:#c0c0c0;"> </span><span
+      style=" color:#808000;">void</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#000000;">error</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">(</span><span
+      style=" color:#808000;">const</span><span style=" color:#c0c0c0;">
+    </span><span style=" color:#808000;">char</span><span style="
+      color:#c0c0c0;"> </span><span style=" color:#000000;">*</span><span
+      style=" color:#c0c0c0;"> </span>fmt<span style=" color:#000000;">,</span><span
+      style=" color:#c0c0c0;"> </span><span style=" color:#000000;">...)</span><span
+      style=" color:#c0c0c0;"></span><span style=" color:#000000;"></span><br>
+    <br>
+    這個函式將訊息包裝成文字，並且透過<a href="XmlRpcErrorHandler.html">XmlRpcErrorHandler</a>輸
+    出。<br>
+    <br>
+    訊息長度的上限是16383。<br>
+    <br>
+    <hr size="2" width="100%">
+    <div align="center"><font color="#cc6600"><b><i>Neutrino
+            International Inc. 2001~2016</i></b></font><br>
+    </div>
+    <br>
+  </body>
+</html>
